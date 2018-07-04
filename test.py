@@ -9,6 +9,8 @@ def one_vs_one():
     global tk
     tk = Tk()
     tk.title("Tic Tac Toe")
+    tk.geometry("490x510")
+    tk.resizable(0, 0)
 
     def play(button):
         global click, tk
