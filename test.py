@@ -44,7 +44,7 @@ def start():
                 button3["text"] == "O" and button5["text"] == "O" and button7["text"] == "O"):
             answer = tkinter.messagebox.askquestion('O Player wins!!!', 'Do you want to play again')
             tk.destroy()
-            if answer == 'yes': 
+            if answer == 'yes':
                 start()
 
     button1 = Button(tk, text=" ", font=('Times 26 bold'), height=4, width=8, command=lambda: play(button1))
