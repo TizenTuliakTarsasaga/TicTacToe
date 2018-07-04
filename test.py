@@ -5,7 +5,7 @@ click = True
 tk = None
 
 
-def start():
+def one_vs_one():
     global tk
     tk = Tk()
     tk.title("Tic Tac Toe")
@@ -13,14 +13,14 @@ def start():
     def play(button):
         global click, tk
 
-        if button["text"] == " " and click == True:
+        if button["text"] == " " and click:
             button["text"] = "X"
+            button.configure(bg="red", fg="grey")
             click = False
         elif button["text"] == " ":
             button['text'] = "O"
+            button.configure(bg="green", fg="grey")
             click = True
-
-        button1.configure(bg = "red", fg = "red")
 
         if (button1["text"] == "X" and button2["text"] == "X" and button3["text"] == "X" or
             button4["text"] == "X" and button5["text"] == "X" and button6["text"] == "X" or
@@ -32,7 +32,8 @@ def start():
                 button3["text"] == "X" and button5["text"] == "X" and button7["text"] == "X"):
             answer = tkinter.messagebox.askquestion('X Player wins!!!', 'Do you want to play again')
             tk.destroy()
-            if answer == 'yes': start()
+            if answer == 'yes':
+                main()
 
         elif (button1["text"] == "O" and button2["text"] == "O" and button3["text"] == "O" or
                 button4["text"] == "O" and button5["text"] == "O" and button6["text"] == "O" or
@@ -45,7 +46,7 @@ def start():
             answer = tkinter.messagebox.askquestion('O Player wins!!!', 'Do you want to play again')
             tk.destroy()
             if answer == 'yes':
-                start()
+                main()
 
     button1 = Button(tk, text=" ", font=('Times 26 bold'), height=4, width=8, command=lambda: play(button1))
     button1.grid(row=1, column=0, sticky=S+N+E+W)
@@ -77,4 +78,8 @@ def start():
     tk.mainloop()
 
 
-start()
+def main():
+    one_vs_one()
+
+
+main()
