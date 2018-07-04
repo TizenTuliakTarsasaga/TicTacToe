@@ -20,6 +20,8 @@ def start():
             button['text'] = "O"
             click = True
 
+        button1.configure(bg = "red", fg = "red")
+
         if (button1["text"] == "X" and button2["text"] == "X" and button3["text"] == "X" or
             button4["text"] == "X" and button5["text"] == "X" and button6["text"] == "X" or
             button7["text"] == "X" and button8["text"] == "X" and button9["text"] == "X" or
