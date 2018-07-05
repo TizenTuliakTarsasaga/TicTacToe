@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter.messagebox
 import random
+import sys
 
 click = True
 tk = None
@@ -208,12 +209,14 @@ def one_vs_computer():
     tk.mainloop()
 
 def main():
-    question = int(input("[ 1 ] One VS One\n[ 2 ] One VS Computer\nWhat would you like? "))
+    question = int(input("[ 0 ] Exit\n[ 1 ] One VS One\n[ 2 ] One VS Computer\nWhat would you like? "))
 
     if question == 1:
         one_vs_one()
     elif question == 2:
         one_vs_computer()
+    elif question == 0:
+        sys.exit
 
 
 main()
