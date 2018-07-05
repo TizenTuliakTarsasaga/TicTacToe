@@ -80,8 +80,17 @@ def one_vs_one():
     tk.mainloop()
 
 
+def one_vs_computer():
+    pass
+
+
 def main():
-    one_vs_one()
+    question = int(input("[ 1 ] One VS One\n[ 2 ] One VS Computer\nWhat would you like? "))
+
+    if question == 1:
+        one_vs_one()
+    elif question == 2:
+        one_vs_computer()
 
 
 main()
