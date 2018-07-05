@@ -250,20 +250,20 @@ def computer_AI():
             else:
                 chooser(9)
 
-        if aimax >= 32:
-            weight = stepDict.get(aimax)
-        elif aimin == 20:
-            weight = stepDict.get(aimin)
-        elif sum(orderList) < 224:
-            weight = 9
-        else:
-            weight = stepDict.get(aimax)
+    if aimax >= 32:
+        weight = stepDict.get(aimax)
+    elif aimin == 20:
+        weight = stepDict.get(aimin)
+    elif sum(orderList) < 224:
+        weight = 9
+    else:
+        weight = stepDict.get(aimax)
 
-        chooser(weight)
+    chooser(weight)
 
 
 def main():
-    question = int(input("[1] 1 vs 1 \n[2] 1 vs cpu\n[3] 1 vs cpu Advenced\nWhat would you like: "))
+    question = int(input("[ 1 ] 1 vs 1 \n[ 2 ] 1 vs cpu\n[ 3 ] 1 vs cpu Advenced\n\nWhat would you like: "))
 
     if question == 1:
         print()

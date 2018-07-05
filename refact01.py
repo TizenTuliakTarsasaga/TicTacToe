@@ -1,5 +1,5 @@
 
-players = [0,'\u001b[33mX','\u001b[31;1mO']
+players = [0 ,'\u001b[33mX','\u001b[31;1mO']
 listField = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
@@ -28,11 +28,13 @@ def userInput():
             break
     print()
 
-def place_marker(listField,ui):
+
+def place_marker(listField, ui):
     listField[ui-1] = players[turn]
 
+
 def winChecker(listField, player):
-    return ((listField[0] ==  listField[1] ==  listField[2] == player) or
+    return ((listField[0] == listField[1] == listField[2] == player) or
     (listField[3] ==  listField[4] ==  listField[5] == player) or
     (listField[6] ==  listField[7] ==  listField[8] == player) or
     (listField[0] ==  listField[3] ==  listField[6] == player) or
@@ -40,6 +42,7 @@ def winChecker(listField, player):
     (listField[2] ==  listField[5] ==  listField[8] == player) or
     (listField[0] ==  listField[4] ==  listField[8] == player) or
     (listField[2] ==  listField[4] ==  listField[6] == player))
+
 
 def full_check(listField):
     return ((1 not in listField[::]) and
@@ -51,6 +54,7 @@ def full_check(listField):
     (7 not in listField[::]) and
     (8 not in listField[::]) and
     (9 not in listField[::]))
+
 
 def replay():
     return input('Do you want to play again? Enter Yes or No: ').lower().startswith('y')
