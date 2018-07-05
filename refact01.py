@@ -59,6 +59,7 @@ def full_check(listField):
 def replay():
     return input('Do you want to play again? Enter Yes or No: ').lower().startswith('y')
 
+
 print('\n'*100)
 game_on = True
 question = int(input("[1] 1 vs 1 \n[2] 1 vs cpu\n[3] 1 vs cpu Advenced What would you like: "))
@@ -68,27 +69,25 @@ if question == 1:
         print()
         turn = -1
         player = players[turn]
-        print(player)
         while game_on:
             surface()        
             ui = userInput()
             place_marker(listField, ui)
             surface()
             if winChecker(listField, player):
-                
                 surface()
                 print('Congratulations! Player '+player+' wins!\u001b[0m')
-                game_on = False
+                listField = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                if not replay():
+                    break
             else:
                 if full_check(listField):
-                    
                     surface()
                     print("Draw")
                     break
                 else:
                     turn *= -1
                     player = players[turn]
-                    
                     print(player)
         listField = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         if not replay():
