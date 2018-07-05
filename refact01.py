@@ -70,7 +70,7 @@ if question == 1:
         turn = -1
         player = players[turn]
         while game_on:
-            surface()        
+            surface()     
             ui = userInput()
             place_marker(listField, ui)
             surface()
@@ -79,6 +79,7 @@ if question == 1:
                 print('Congratulations! Player '+player+' wins!\u001b[0m')
                 listField = [1, 2, 3, 4, 5, 6, 7, 8, 9]
                 if not replay():
+                    listField = [1, 2, 3, 4, 5, 6, 7, 8, 9]
                     break
             else:
                 if full_check(listField):
