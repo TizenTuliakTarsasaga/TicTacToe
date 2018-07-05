@@ -86,7 +86,7 @@ def one_vs_computer():
     list_field = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     def play(button):
-        global click, tk
+        global tk, click
 
         if button["text"] == " " and click:
             button["text"] = "X"
@@ -109,42 +109,46 @@ def one_vs_computer():
                 list_field[8-1] = "X"
             if button9["text"] == "X":
                 list_field[9-1] = "X"
+            click = False
+
+        if not click:
             while True:
                 try:
                     x = int(random.choice(list_field))
                 except ValueError:
                     continue
                 else:
+                    list_field[x-1] = "O"
                     break
-            list_field[x-1] = "0"
 
-            if list_field[1-1] == "0":
-                button1["text"] = "0"
+            if list_field[1-1] == "O":
+                button1["text"] = "O"
                 button1.configure(bg="green", fg="grey")
-            if list_field[2-1] == "0":
-                button2["text"] = "0"
+            if list_field[2-1] == "O":
+                button2["text"] = "O"
                 button2.configure(bg="green", fg="grey")
-            if list_field[3-1] == "0":
-                button3["text"] = "0"
+            if list_field[3-1] == "O":
+                button3["text"] = "O"
                 button3.configure(bg="green", fg="grey")
-            if list_field[4-1] == "0":
-                button4["text"] = "0"
+            if list_field[4-1] == "O":
+                button4["text"] = "O"
                 button4.configure(bg="green", fg="grey")
-            if list_field[5-1] == "0":
-                button5["text"] = "0"
+            if list_field[5-1] == "O":
+                button5["text"] = "O"
                 button5.configure(bg="green", fg="grey")
-            if list_field[6-1] == "0":
-                button6["text"] = "0"
+            if list_field[6-1] == "O":
+                button6["text"] = "O"
                 button6.configure(bg="green", fg="grey")
-            if list_field[7-1] == "0":
-                button7["text"] = "0"
+            if list_field[7-1] == "O":
+                button7["text"] = "O"
                 button7.configure(bg="green", fg="grey")
-            if list_field[8-1] == "0":
-                button8["text"] = "0"
+            if list_field[8-1] == "O":
+                button8["text"] = "O"
                 button8.configure(bg="green", fg="grey")
-            if list_field[9-1] == "0":
-                button9["text"] = "0"
+            if list_field[9-1] == "O":
+                button9["text"] = "O"
                 button9.configure(bg="green", fg="grey")
+            click = True
 
         print(list_field)
 
@@ -173,7 +177,6 @@ def one_vs_computer():
             tk.destroy()
             if answer == 'yes':
                 main()
-
 
     button1 = Button(tk, text=" ", font=('Times 26 bold'), height=4, width=8, command=lambda: play(button1))
     button1.grid(row=1, column=0, sticky=S+N+E+W)
