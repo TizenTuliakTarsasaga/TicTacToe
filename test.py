@@ -120,6 +120,7 @@ def one_vs_computer():
                     continue
                 else:
                     list_field[x-1] = "O"
+                    click = True
                     break
 
             if list_field[1-1] == "O":
@@ -149,7 +150,6 @@ def one_vs_computer():
             if list_field[9-1] == "O":
                 button9["text"] = "O"
                 button9.configure(bg="green", fg="grey")
-            click = True
 
         print(list_field)
 
